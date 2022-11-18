@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Net.Http.Headers;
 using System.Reflection;
@@ -13,10 +13,11 @@ class Program
         double b = X[1];
         double min = -32.768;
         double max = 32.767;
+        
 
 
 
-        for (double i = a; i < b -1; i++) Console.Write($"{i+1} ");
+        //for (double i = a; i < b - 1; i++) Console.Write($"{i + 1} ");
 
         /*if (a == b || a + 1 > b || a - 1 < b || b + 1 > a || b - 1 < a)
         {
@@ -24,8 +25,26 @@ class Program
         }
         */
 
-        for (double j = a; j >= 11; j++) Console.WriteLine($"{j+1},{j+2},{j+3}, ..., {b-2}{b-1} ");
-        
+        //for (double j = a; j+b >= 11; j++) Console.WriteLine($"{j + 1},{j + 2},{j + 3}, ..., {b - 2}{b - 1} ");
+
+        if (b - a <= 11 && a + b >= 11)
+        {
+           if(a<b)
+            {
+                for (double j = a; j <= 11; j++)
+                {
+
+                    Console.WriteLine($"{j + 1},{j + 2},{j + 3}, ..., {b - 2},{b - 1}");
+                   
+
+                }
+
+
+
+
+            }
+        }
+
 
 
 
