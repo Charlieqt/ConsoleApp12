@@ -8,58 +8,71 @@ class Program
     public static void Main()
     {
         string input = Console.ReadLine();
-        double[] X = Array.ConvertAll<string, double>(input.Split(" "), double.Parse);
-        double a = X[0];
-        double b = X[1];
-        double min = -32.768;
-        double max = 32.767;
+        int[] X = Array.ConvertAll<string, int>(input.Split(" "), int.Parse);
+        int a = X[0];
+        int b = X[1];
 
 
-
-
-        
-
-        
-       for (double i = a; i < b - 1; i++)
-        {
-            Console.Write($"{i + 1} ");
-            
-        }
-        /*(a == b || a + 1 > b || a - 1 < b || b + 1 > a || b - 1 < a)
+        if (a == b || a + 1 == b || b + 1 == a)
         {
             Console.WriteLine("Empty");
         }
-        /*if (b - a <= 11 && a + b >= 11)
-         {
-             if (a < b)
-             {
-
-
-
-                 /*for (double i = a; i < b - 1; i++)
-                 {
-                     Console.Write($"{i + 1} ");
-                 }
-                 */
-        /*for (double j = a; j <= 11; j++)
+        else
         {
 
-            Console.WriteLine($"{j + 1},{j + 2},{j + 3}, ..., {b - 2},{b - 1}");
-            break;
+            while (b > a)
+            {
+                if (b - a >= 10 && a + b >= 10)
+                {
+                    Console.WriteLine($"{a + 1},{a + 2},{a + 3},...,{b - 2},{b - 1}");
+
+                    a++;
+                    break;
+                }
+                else if (a + b >= -10 || a + b <= -10)
+                {
+                    Console.WriteLine($"{a + 1},{a + 2},{a + 3},...,{b - 2},{b - 1}");
+
+                    a++;
+                    break;
+                }
+                break;  
+            }
+
+            while (a < b)
+            {
+                if (b - a >= 5 && a + b >= 5)
+                {
+                    Console.WriteLine($"{a + 1},{a + 2},{a + 3},{a + 4}");
+
+                    a++;
+                    break;
+                }
+                else if (b + a >= -5 || b <= 0 || b + a >= -5 || b <= 0)
+                {
+                    Console.WriteLine($"{a + 1},{a + 2},{a + 3},{a + 4}");
+
+                    a++;
+                    break;
+                
+                }
+                break;
+            }
+                
+            
+
+
+
+
+
+
         }
-        */
 
 
 
 
 
 
-
-
-
-        // }
-
-        //}
 
 
 
@@ -71,4 +84,5 @@ class Program
 
 
     }
+
 }
